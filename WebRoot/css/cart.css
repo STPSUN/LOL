@@ -1,0 +1,107 @@
+#header{
+	background: red;
+}
+
+#main{
+}
+
+#main-top{
+	height: 75px;
+	background: #efefef;
+}
+
+#main-top td{
+	width: 200px;
+	padding-left: 70px;
+}
+
+#main-top img{
+	width: 25%;
+	float: left;
+}
+
+#main-talble-one{
+	padding-top: 50px;
+}
+
+#main-tr-one{
+	height: 50px;
+	background: #d8d5d5;
+}
+
+#main-all{
+	width: 100px;
+	padding-left: 100px;
+}
+
+#main-shoopNum{
+	width: 250px;
+	text-align: left;
+	padding-left: 0px;
+}
+
+#main-money{
+	width: 400px;
+}
+
+#main-number{
+	width: 50px;
+}
+
+#main-total{
+	width: 40px;
+}
+
+#main-opetate{
+	width: 40px;
+}
+
+#main img{
+	/*width: 50%;*/
+}
+
+#main-img{
+	width: 50%;
+	float: left;
+}
+
+#main-message{
+	
+}
+
+#main-text{
+	width: 40px;
+	height: 20px;
+}
+
+.main-center{
+	text-align: center;
+}
+
+#main-checkbox-middle{
+	padding-left: 140px;
+}
+
+#main-checkbox-bottom{
+	padding-left: 120px;
+	width: 70px;
+}
+
+#main-botton-delete{
+	width: 50px;
+	height: 30px;
+}
+
+#main-th-money{
+	width: 500px;
+}
+
+#main-clear-cart{
+	float: right;
+	padding-right: 15%;
+}
+
+#end{
+	background: purple;
+	padding-bottom: 10px;
+}

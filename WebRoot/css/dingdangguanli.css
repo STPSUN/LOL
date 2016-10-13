@@ -1,0 +1,16 @@
+h1{
+background-color:gray;
+text-align:center;
+}
+.manage { padding:20px; overflow:hidden; }
+.manage .usermanage { width:100%;  border-bottom:2px solid #dfc9b2; }
+.manage .usermanage td{
+ padding:5px; border-top:1px solid #dfc9b2; text-align:center;}
+ .manage .usermanage td { border-left:1px solid #e1e1e1; }
+.manage .usermanage td.c { text-align:center; }
+h2{
+margin-left:20px;
+}
+#yema{
+margin-left:600px;
+}

@@ -1,0 +1,62 @@
+#header{
+	background: red;
+	height: 100px;
+}
+
+#main{
+	height: 700px;
+}
+
+#main-top{
+	padding-left: 4%;
+}
+
+#main-middle-div-one{
+	float: left;
+	padding-left: 300px;
+}
+
+#main-bottom{
+	padding-left: 15%;
+}
+
+.main-bottom-center{
+	text-align: center;
+}
+
+#main-bottom-th-commodity{
+	width: 200px;
+	text-align: left;
+}
+
+#main-bottom-th-color{
+	width: 300px;
+}
+
+#main-bottom-th-number{
+	width: 100px;
+}
+
+#main-bottom-th-total{
+	width: 100px;
+}
+
+#main-bottom img{
+	width: 50%;
+	float: left;
+}
+
+#main-bottom-message{
+
+}
+
+#main-bottom-td-backCart{
+	padding-left: 67%;
+}
+#fanhui{
+	margin-left: 800px;
+}
+#end{
+	background: purple;
+	height: 100px;
+}

@@ -1,0 +1,47 @@
+#main{
+	margin-left:150px;
+	
+}
+#main-aling1{
+	height: 75px;
+	background: #efefef;
+	padding-left: 70px;
+}
+#main-aling1 h2{
+	padding-top: 18px;
+}
+
+#table2{
+	margin-left:10px;
+}
+#table3{
+	width:1000px;
+}
+.tr3{
+	text-align:center;
+}
+.td3{
+	text-align:left;
+}
+#table4{
+	width:300px;
+}
+.td4{
+	text-align:center;
+}
+.t1{
+	margin-left:680px;
+}
+.t2{
+	text-align: right;
+}
+#main-img{
+	width: 30%;
+	float: left;
+}
+#main-message{
+	padding-top:60px;
+	padding-left:10px;
+	width:400px;
+	height:80px;
+}

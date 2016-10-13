@@ -1,0 +1,61 @@
+#main-header{
+	background: black;
+	color: white;
+	height:100px;
+}
+
+#main-header img{
+	width: 80%;
+	padding-left: 40%;
+}
+
+#main-header-index{
+	padding-left: 260px;
+}
+
+#main-header-video{
+	padding-left: 150px;
+}
+
+#main-header-mall{
+	padding-left: 150px;
+}
+
+#main-middle{
+	height: 460px;
+}
+
+#main-middle img{
+	width: 100%;
+}
+
+#main-bottom img{
+	width: 83%;
+}
+
+#main-bottom{
+	height: 100px;
+	padding-top: -10px;
+	background: #151929;
+	color: white;
+}
+
+#main-bottom-active{
+	padding-left: 100px;
+}
+
+#main-bottom-video{
+	padding-left: 100px;
+}
+
+#main-bottom-hero{
+	padding-left: 100px;
+}
+
+#main-bottom-login{
+	padding-left: 100px;
+}
+
+#main-bottom-register{
+	padding-left: 100px;
+}

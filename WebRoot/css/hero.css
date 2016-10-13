@@ -1,0 +1,86 @@
+#all{
+background-color:#f7f8f8;
+margin-left:200px;
+}
+.introduce{
+
+    font-size: 16px;
+    color: #338C7A;
+}
+#story{
+border:1px solid #F0F0F0;
+height:241px;
+width:960px;
+padding-left:20px;
+padding-right:20px;
+padding-top:40px;
+background-color:white;
+}
+#one{
+padding-left:20px;
+}
+#photo ul li{
+float:left;
+height:104px;
+width:90px;
+list-style:none;
+padding-top:20px;
+padding-left:20px;
+}
+#shuoming{
+clear:left;
+border:1px solid #F0F0F0;
+border-top-style:none;
+margin-left:40px;
+padding-left:20px;
+height:150px;
+width:960px;
+background-color:white;
+}
+em{
+font-size:15px;
+}
+.shuoming{
+display:none;
+margin-left:40px;
+padding-left:20px;
+}
+.shuoming.active{
+clear:left;
+background-color:white;
+border:1px solid #F0F0F0;
+width:960px;
+display:block;
+border-top-style:none;
+}
+#use{
+border:1px solid #F0F0F0;
+height:350px;
+width:960px;
+padding-left:20px;
+padding-right:20px;
+padding-top:40px;
+background-color:white;
+}
+#shuoming {
+display:none;
+height:180px;
+width:960px;
+border:1px solid #F0F0F0;
+border-top-style:none;
+background-color:white;
+}
+#s{
+margin-left:-35px;
+}
+
+.skilltupian.num{
+	background-color:white;
+	border-top:green 2px solid;
+}
+hr{
+margin-right:200px;
+}
+#weizhi{
+margin-bottom:20px;
+}

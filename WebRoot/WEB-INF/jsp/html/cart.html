@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>购物车</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/cart.css">
+	 <script type="text/JavaScript">
+ 	function check(){
+ 		var oInput=document.getElementsByName("product");
+ 		for (var i=0;i<oInput.length;i++){
+ 			if (document.getElementById("all").checked==true){
+ 				oInput[i].checked=true;
+ 				}
+ 			else {
+ 				oInput[i].checked=false;
+ 				}
+ 			}
+ 		}
+		function delRow(rowId){
+	var row=document.getElementById(rowId).rowIndex;   
+	document.getElementById("main-talble-one").deleteRow(row); 
+	}
+ 	</script>
+</head>
+<body>
+	<iframe src="head.html" frameborder="0" height="260px" width="100%" scrolling="no" ></iframe>
+	<div id="main">
+		<div id="main-top">
+			<table>
+				<tr>
+					<td>
+						<img src="images/pay/car.png">
+						<h2>拍下商品</h2>
+					</td>
+					<td>
+						<img src="images/pay/pen.png">
+						<h2>填写订单</h2>
+					</td>
+					<td>
+						<img src="images/pay/card.png">
+						<h2>付款</h2>
+					</td>
+					<td>
+						<img src="images/pay/t.png">
+						<h2>支付成功</h2>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<form>
+			<table id="main-talble-one" cellspacing="0" width="100%">
+				<tr id="main-tr-one">
+					<th id="main-all">
+						<input type="checkbox" id="all" value="全选" onclick="check();"/>全选
+					</th>
+					<th id="main-shoopNum">商品图片</th>
+					<th id="main-shoopNum">商品信息</th>
+					<th id="main-money">单价(元)</th>
+					<th id="main-number">数量<th>
+					<th id="main-total">小计<th>
+					<th id="main-opetate">操作<th>
+				</tr>
+				<tr id="del1">
+					<td id="main-checkbox-middle">
+						<input type="checkbox" name="product" value="1"/>
+					</td>
+					<td>
+						<img id="main-img" src="images/poster/a1.jpg">
+					</td>
+					<td>
+						<div id="main-message">
+							<span>致命盛宴<br/></span>
+							<span >颜色：彩色<br/></span>
+							<span>尺寸：均码</span>
+						</div>
+					</td>
+					<td class="main-center">￥40</td>
+					<td class="main-center">
+						<input id="main-text" type="text">
+					</td>
+					<td></td>
+					<td class="main-center">￥40</td>
+					<td></td>
+					<td class="main-center">
+						<input name="rowdel" type="button" value="删除" onclick='delRow("del1")' />
+					</td>
+				</tr>
+				
+			</table>
+			<table frame="hsides" width="100%">
+				<tr>
+					<td id="main-checkbox-bottom">
+						<a href="shop.html">继续购物</a>
+					</td>
+					<td id="main-clear-cart">
+						<a href="#">清空购物车</a>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<iframe src="foot.html" frameborder="0" height="260px" width="100%" scrolling="no" ></iframe>
+</body>
+</html>

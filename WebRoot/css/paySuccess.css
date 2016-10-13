@@ -1,0 +1,19 @@
+#header{
+	background: red;
+}
+
+#main{
+}
+
+#main img{
+	padding-left: 35%;
+	width: 30%;
+}
+
+#main p{
+	text-align: center;
+}
+
+#end{
+	background: purple;
+}
