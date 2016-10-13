@@ -9,7 +9,12 @@ public interface UserDao
 {
 	User fingByID(String id) throws SQLException;
 	
-	boolean addUser();
+	/**
+	 * 添加一个用户
+	 * @return 成功：true
+	 * 			失败：false
+	 */
+	boolean addUser(User user);
 	
 	List<User> getAllUsers() throws SQLException;
 	

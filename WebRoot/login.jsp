@@ -1,26 +1,14 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>登录</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<style>
-		.code{
-background-image:url(111.jpg);
-font-family:Arial,宋体;
-font-style:italic;
-color:green;
-border:0;
-padding:2px 3px;
-letter-spacing:3px;
-font-weight:bolder;
-}
-.unchanged {
-border:0;
-}
-		</style>
+		<link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body onLoad="createCode();">
 		<div  id="main">
+		<form method="post" action="doLogin.jsp" onsubmit="return checkForm(this)">
 			<table width="600px" align="center"> 
 				<tr>
 					<td>
@@ -35,10 +23,7 @@ border:0;
 									<td height="50" style="text-align:right">密码：</td>
 									<td><input name="psw1" style="width:200px" id="passWord" type="password" onfocus="FocusItem(this)" onblur="CheckItem(this);"/><br/><span></span></td>
 								</tr>
-								<tr>
-									<td height="50" style="text-align:right">确认密码：</td>
-									<td><input name="psw2" style="width:200px"  type="password" onfocus="FocusItem(this)" onblur="CheckItem(this);"//><br/><span></span></td>
-								</tr>
+							
 								<tr>
 									<td height="50" style="text-align:right">验证码：</td>
 									<td><input type="text" id="input1" /></td>
@@ -53,8 +38,7 @@ border:0;
 								</tr>
 								<tr>
 									<td height="80" colspan="2" align="center">
-								
-										<input type="button" id="Button1" onClick="validate();" style="background-color:#38ac88;height:35px" value="确认登录"/>
+										<input type="submit" id="Button1" onClick="validate();" style="background-color:#38ac88;height:35px" value="确认登录"/>
 									</td>
 								</tr> 
 							</table>
@@ -62,6 +46,7 @@ border:0;
 					</td>
 				</tr>
 			</table>
+		</form>
 		</div>
 		<script type="text/javascript" src="js/loginadd.js"></script>
 	</body>

@@ -1,6 +1,7 @@
 
 
 var img=document.getElementById('score');
+var link=document.getElementById('xianjie');
 var imgarr=[];
 for(var i=1;i<=5;i++){
 imgarr.push("images/index/bg0"+i+".png");

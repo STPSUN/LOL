@@ -19,15 +19,24 @@ public class UserDaoImpl  implements UserDao
 		
 	}
 
-	public boolean addUser()
+	public boolean addUser(User user)
 	{
 		PreparedStatement stmt = null;
 		boolean rs = false;
 		
 		Connection connection = JdbcUtil.getConnection();
-		String sql = "insert into users values(1,'s','s','sun','sex','s',232,32,'dsa'";
+		String sql = "insert into users(id,name,username,password,sex,phone,postcode,address) values(?,?,?,?,?,?,?,?)";
 		try
 		{
+			stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, user.getId());
+			stmt.setString(2, user.getName());
+			stmt.setString(3, user.getUsername());
+			stmt.setString(4, user.getPassword());
+			stmt.setString(5, user.getSex());
+			stmt.setString(6, user.getPhone());
+			stmt.setString(7, user.getPostcode());
+			stmt.setString(8, user.getAddress());
 			rs = stmt.executeUpdate() == 1 ? true : false;
 		} catch (SQLException e)
 		{
@@ -61,7 +70,7 @@ public class UserDaoImpl  implements UserDao
 				if(userList == null)
 					userList = new ArrayList<User>();
 				User user = new User();
-				user.setUserID(rs.getLong("id"));
+				user.setId(rs.getInt("id"));
 				user.setName(rs.getString("name"));
 				user.setPassword(rs.getString("password"));
 				user.setUsername(rs.getString("username"));

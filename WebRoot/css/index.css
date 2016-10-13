@@ -138,7 +138,10 @@ display:block;
 .bottom-right-dt{
 	float: left;
 }
-
+a:link,a:visited{
+ text-decoration:none;  
+ color:black;
+}
 #end{
 	/*background: blue;*/
 	height: 70px;

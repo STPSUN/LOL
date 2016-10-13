@@ -1,2 +1,3 @@
-
+#register form table td span { display:none; vertical-align:middle; margin-left:10px; padding-left:22px; padding-right:10px; background:url(../images/bg.png) -232px -63px no-repeat; }
+#register form table td span.error { display:inline-block; border:1px solid #ff835a; background-color:#ffe8e0; }
 
