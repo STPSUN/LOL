@@ -7,7 +7,7 @@ import per.sun.lol.entity.User;
 
 public interface UserDao
 {
-	User fingByID(String id) throws SQLException;
+	User fingByName(String name) throws SQLException;
 	
 	/**
 	 * 添加一个用户

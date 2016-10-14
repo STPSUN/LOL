@@ -25,7 +25,7 @@ public class UserDaoImpl  implements UserDao
 		boolean rs = false;
 		
 		Connection connection = JdbcUtil.getConnection();
-		String sql = "insert into users(id,name,username,password,sex,phone,postcode,address) values(?,?,?,?,?,?,?,?)";
+		String sql = "insert into users(id,name,username,password,sex,phone,postcode,address,status,grade) values(?,?,?,?,?,?,?,?,?,?)";
 		try
 		{
 			stmt = connection.prepareStatement(sql);
@@ -37,6 +37,8 @@ public class UserDaoImpl  implements UserDao
 			stmt.setString(6, user.getPhone());
 			stmt.setString(7, user.getPostcode());
 			stmt.setString(8, user.getAddress());
+			stmt.setInt(9, user.getStatus());
+			stmt.setString(10, user.getGrade());
 			rs = stmt.executeUpdate() == 1 ? true : false;
 		} catch (SQLException e)
 		{
@@ -47,10 +49,39 @@ public class UserDaoImpl  implements UserDao
 		return rs;
 	}
 
-	public User fingByID(String id) throws SQLException
+	public User fingByName(String name) throws SQLException
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Connection connection = JdbcUtil.getConnection(); 
+		PreparedStatement stmt = null;
+		ResultSet rSet = null;
+		User user = null;
+		
+		try
+		{
+			stmt = connection.prepareStatement("select * from users where name=?");
+			stmt.setString(1, name);
+			rSet = stmt.executeQuery();
+			if(rSet.next())
+			{
+				user = new User();
+				user.setId(rSet.getInt("id"));
+				user.setName(name);
+				user.setUsername(rSet.getString("username"));
+				user.setPassword(rSet.getString("password"));
+				user.setSex(rSet.getString("sex"));
+				user.setPhone(rSet.getString("phone"));
+				user.setPostcode(rSet.getString("postcode"));
+				user.setAddress(rSet.getString("address"));
+				user.setStatus(rSet.getInt("status"));
+				user.setGrade(rSet.getString("grade"));
+			}
+		} catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return user;
 	}
 
 	public List<User> getAllUsers() throws SQLException
@@ -73,12 +104,14 @@ public class UserDaoImpl  implements UserDao
 				user.setId(rs.getInt("id"));
 				user.setName(rs.getString("name"));
 				user.setPassword(rs.getString("password"));
-				user.setUsername(rs.getString("username"));
-				user.setSex(rs.getString("sex"));
+				//user.setUsername(rs.getString("username"));
+				//user.setSex(rs.getString("sex"));
 				//user.setBirthDate(rs.getDate("birthDate"));
-				user.setPhone(rs.getString("phone"));
-				user.setPostcode(rs.getString("postcode"));
-				user.setAddress(rs.getString("address"));
+				//user.setPhone(rs.getString("phone"));
+				//user.setPostcode(rs.getString("postcode"));
+				//user.setAddress(rs.getString("address"));
+				user.setStatus(rs.getInt("status"));
+				//user.setGrade(rs.getString("grade"));
 				userList.add(user);
 			}
 		} catch (Exception e)

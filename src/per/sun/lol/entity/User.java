@@ -12,7 +12,11 @@ public class User
 	private String phone;
 	private String postcode;
 	private String address;
+	private Integer status;
+	private String grade;
 	
+	
+
 	public User()
 	{
 		super();
@@ -20,7 +24,7 @@ public class User
 	}
 	
 	public User(Integer id, String name, String username, String password,
-			String sex, String phone, String postcode, String address)
+			String sex, String phone, String postcode, String address, Integer status, String grade)
 	{
 		super();
 		this.id = id;
@@ -31,6 +35,8 @@ public class User
 		this.phone = phone;
 		this.postcode = postcode;
 		this.address = address;
+		this.status = status;
+		this.grade = grade;
 	}
 
 	public Integer getId()
@@ -97,5 +103,23 @@ public class User
 	{
 		this.address = address;
 	}
-	
+
+	public Integer getStatus()
+	{
+		return status;
+	}
+
+	public void setStatus(Integer status)
+	{
+		this.status = status;
+	}
+	public String getGrade()
+	{
+		return grade;
+	}
+
+	public void setGrade(String grade)
+	{
+		this.grade = grade;
+	}
 }
