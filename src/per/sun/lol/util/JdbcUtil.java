@@ -25,7 +25,6 @@ public class JdbcUtil
 		{
 			//建立链接
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","lol","sun");
-			System.out.println("建立链接成功");
 		} catch (SQLException e)
 		{
 			// TODO Auto-generated catch block
