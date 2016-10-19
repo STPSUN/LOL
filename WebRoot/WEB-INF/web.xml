@@ -6,63 +6,58 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name></display-name>	
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+ 
   <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>testService</servlet-name>
-    <servlet-class>per.sun.lol.service.testService</servlet-class>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.HomeServlet</servlet-class>
   </servlet>
+ 
   <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>demoService</servlet-name>
-    <servlet-class>per.sun.lol.service.demoService</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>testServlet</servlet-name>
-    <servlet-class>per.sun.lol.web.servlet.testServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>test</servlet-name>
-    <servlet-class>per.sun.lol.web.servlet.test</servlet-class>
+    <servlet-name>DemoServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.DemoServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>per.sun.lol.web.servlet.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.TestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ManageHomeServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.manage.ManageHomeServlet</servlet-class>
+  </servlet>
+
+
+
+
 
   <servlet-mapping>
-    <servlet-name>testService</servlet-name>
-    <url-pattern>/testService</url-pattern>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
   </servlet-mapping>
+ 
   <servlet-mapping>
-    <servlet-name>demoService</servlet-name>
-    <url-pattern>/demoService</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>testServlet</servlet-name>
-    <url-pattern>/testServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>test</servlet-name>
-    <url-pattern>/test</url-pattern>
+    <servlet-name>DemoServlet</servlet-name>
+    <url-pattern>/demo</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManageHomeServlet</servlet-name>
+    <url-pattern>/manageHome</url-pattern>
   </servlet-mapping>
 
-  <resource-ref>
-  	<res-ref-name>jdbc/lol</res-ref-name>
-  	<res-type>javax.sql.DataSource</res-type>
-  	<res-auth>Container</res-auth>
-  </resource-ref>
+  
   
   <filter>
   	<filter-name>CharacterEncodingFilter</filter-name>
@@ -81,5 +76,11 @@
   	<filter-name>LoginControlFilter</filter-name>
   	<url-pattern>/manage/*</url-pattern>
   </filter-mapping>
+  
+  <resource-ref>
+  	<res-ref-name>jdbc/lol</res-ref-name>
+  	<res-type>javax.sql.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
   
 </web-app>

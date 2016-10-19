@@ -10,6 +10,7 @@ import java.util.List;
 
 import per.sun.lol.dao.UserDao;
 import per.sun.lol.entity.User;
+import per.sun.lol.util.Jdbc;
 import per.sun.lol.util.JdbcUtil;
 
 public class UserDaoImpl  implements UserDao
@@ -24,7 +25,7 @@ public class UserDaoImpl  implements UserDao
 		PreparedStatement stmt = null;
 		boolean rs = false;
 		
-		Connection connection = JdbcUtil.getConnection();
+		Connection connection = Jdbc.getConnection();
 		String sql = "insert into users(id,name,username,password,sex,phone,postcode,address,status,grade) values(?,?,?,?,?,?,?,?,?,?)";
 		try
 		{

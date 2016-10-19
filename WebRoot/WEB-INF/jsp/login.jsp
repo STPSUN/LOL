@@ -1,4 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	pageContext.setAttribute("contextPath", path);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +16,9 @@
 </head>
 <body onLoad="createCode();">
 	<div id="main">
-		<form method="post" action="${contextPath }/login"
+		<form method="post" action="${contextPath}/login"
 			onsubmit="return checkForm(this)">
+			<%log("进入login.jsp"); %>
 			<input type="hidden" name="action" value="doLogin" />
 			<input type="hidden" name="ourl" value="${param['ourl'] }" />
 			<table width="600px" align="center">

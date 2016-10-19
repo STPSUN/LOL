@@ -8,6 +8,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import sun.util.logging.resources.logging;
+
 public class DataSourceUtil
 {
 	private static DataSource dataSource;
@@ -34,7 +36,7 @@ public class DataSourceUtil
 		try
 		{
 			ctx = new InitialContext();
-			dataSource = (DataSource)ctx.lookup("java:comp/envjdbc/lol");
+			dataSource = (DataSource)ctx.lookup("java:comp/env/jdbc/lol");
 		} catch (NamingException e)
 		{
 			// TODO Auto-generated catch block

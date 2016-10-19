@@ -1,8 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <html>
 <head>
-<link href="../css/manageindex.css" type="text/css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="../css/a.css">
+<link href="css/manageindex.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/a.css">
 </head>
 
 <jsp:include page="/manage/header.jsp"></jsp:include>

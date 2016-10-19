@@ -6,5 +6,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Users/SUN/Desktop/ppt/JDBC DAO/提供给学员的材料/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="E:/JAVA课程/提供给学员的材料/ojdbc14.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

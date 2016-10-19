@@ -2,25 +2,19 @@ package per.sun.lol.web.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.SQLException;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 
-public class test extends HttpServlet
+public class DemoServlet extends HttpServlet
 {
 
 	/**
 	 * Constructor of the object.
 	 */
-	public test()
+	public DemoServlet()
 	{
 		super();
 	}
@@ -47,39 +41,8 @@ public class test extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
 	{
-
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		try
-		{
-			Context ctx = new InitialContext();
-			String jndi= (String)ctx.lookup("java:comp/env/tjdnd");
-			System.out.println(jndi);
-			out.println(jndi);
-		} catch (NamingException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		doPost(request, response);
 		
-		try
-		{
-			Context ctx = new InitialContext();
-			DataSource dataSource = (DataSource)ctx.lookup("java:comp/env/jdbc/lol");
-			Connection connection = dataSource.getConnection();
-			System.out.println("获取链接成功");
-		} catch (NamingException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		out.flush();
-		out.close();
 	}
 
 	/**
@@ -95,20 +58,7 @@ public class test extends HttpServlet
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
 	{
-
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-		out.println("<HTML>");
-		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-		out.println("  <BODY>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the POST method");
-		out.println("  </BODY>");
-		out.println("</HTML>");
-		out.flush();
-		out.close();
+		request.getRequestDispatcher("/WEB-INF/jsp/home.jsp").forward(request, response);
 	}
 
 	/**
