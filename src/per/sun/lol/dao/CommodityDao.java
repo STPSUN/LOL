@@ -11,5 +11,7 @@ public interface CommodityDao
 	List<Commodity> findByName(String name);
 	
 	boolean addCommodity(Commodity item);
+	
+	Commodity findById(Integer id);
 
 }

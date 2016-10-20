@@ -1,5 +1,7 @@
 package per.sun.lol.Service;
 
+import java.util.List;
+
 import per.sun.lol.entity.User;
 
 public interface UserService
@@ -21,6 +23,11 @@ public interface UserService
 	 * @return
 	 */
 	User getUser(String name);
+	
+	/**
+	 * 获取用户列表
+	 */
+	List<User> getUsers();
 	
 
 }

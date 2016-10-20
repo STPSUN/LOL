@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import per.sun.lol.Service.UserService;
 import per.sun.lol.dao.UserDao;
@@ -55,6 +57,23 @@ public class UserServiceImpl implements UserService
 		}
 		
 		return user;
+	}
+
+	public List<User> getUsers()
+	{
+		List<User> uList = new ArrayList<User>();
+		UserDao userDao = new UserDaoImpl();
+		
+		try
+		{
+			uList = userDao.getAllUsers();
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return uList;
 	}
 
 	

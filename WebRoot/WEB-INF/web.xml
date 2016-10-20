@@ -30,6 +30,36 @@
     <servlet-name>ManageHomeServlet</servlet-name>
     <servlet-class>per.sun.lol.web.servlet.manage.ManageHomeServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>OrderManageServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.manage.OrderManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>NoticeManageServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.manage.NoticeManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommodityManageServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.manage.CommodityManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>QuestionManageServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.manage.QuestionManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserManageServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.manage.UserManageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminManageServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.manage.AdminManageServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
 
 
 
@@ -55,6 +85,30 @@
   <servlet-mapping>
     <servlet-name>ManageHomeServlet</servlet-name>
     <url-pattern>/manageHome</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderManageServlet</servlet-name>
+    <url-pattern>/order</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NoticeManageServlet</servlet-name>
+    <url-pattern>/notice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommodityManageServlet</servlet-name>
+    <url-pattern>/commodity</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QuestionManageServlet</servlet-name>
+    <url-pattern>/question</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserManageServlet</servlet-name>
+    <url-pattern>/user</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminManageServlet</servlet-name>
+    <url-pattern>/admin</url-pattern>
   </servlet-mapping>
 
   

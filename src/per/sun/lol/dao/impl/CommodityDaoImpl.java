@@ -97,4 +97,33 @@ public class CommodityDaoImpl implements CommodityDao
 		return commodityList;
 	}
 
+	public Commodity findById(Integer id)
+	{
+		Connection connection = JdbcUtil.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Commodity commodity = null;
+		String sql = "select * from commodity where id=?";
+		
+		try
+		{
+			ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			if(rs.next())
+			{
+				commodity = new Commodity();
+				commodity.setId(id);
+				commodity.setName(rs.getString("name"));
+				commodity.setNum(rs.getInt("num"));
+			}
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return commodity;
+	}
+
 }
