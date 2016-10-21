@@ -4,6 +4,7 @@
 		<title>确认订单</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/orderConfirmation.css">
+			<link rel="stylesheet" type="text/css" href="css/a.css">
 	</head>
 	<body>
 		<iframe src="head.html" frameborder="0" height="300px"  width="100%" scrolling="no" ></iframe>
@@ -22,43 +23,24 @@
 				<table id="table1">
 					<tr>
 						<td class="table1"><a class="a1">*</a>收货人：</td>
+							
 						<td><input style="width:100px"  type="text" /></td>
 					</tr>
 					<tr>
-						<td class="table1"><a class="a1">*</a>选择地区：</td>
-							<td>
-								<select class="area">
-									<option value="省份">省份</option>
-									<option value="北京">北京</option>
-									<option value="广东省">广东省</option>
-									<option value="福建省">福建省</option>
-									<option value="浙江省">浙江省</option>
-									<option value="江苏省">江苏省</option>
-									<option value="江西省">江西省</option>
-									<option value="天津省">天津省</option>
-									<option value="河北省">河北省</option>
-									<option value="山西省">山西省</option>
-									<option value="山东省">江苏省</option>
-									<option value="安徽省">安徽省</option>
-								</select>
-								<select class="area">
-									<option value="市">市</option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-								</select>
-								<select class="area">
-									<option value="区">区</option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-								</select>
-							</td>
-						<tr>
+									<td height="50" style="text-align:right">居住地：</td>
+									
+									<td><select name="province" id="province"
+										onchange="getCity()">
+											<option value="0">请选择所在省份</option>
+											<option value="直辖市">直辖市</option>
+											<option value="江苏省">江苏省</option>
+											<option value="福建省">福建省</option>
+											<option value="广东省">广东省</option>
+											<option value="甘肃省">甘肃省</option>
+									</select> <select id="city" name="city">
+											<option value="0">请选择所在城市</option>
+									</select></td>
+								</tr>
 							<td class="table1"><a class="a1">*</a>详细地址：</td>
 							<td><input style="width:200px"  type="text" /><a class="a2">（请填写详细的地址，确保能准确送达）</a></td>
 						</tr>
@@ -73,7 +55,7 @@
 						<tr>
 							<td></td>
 							<td>
-								<input type="button" class="button" value="提交信息"/>
+								<a href="pay.html"><input type="button" class="button" value="确认下单"/></a>
 							</td>
 						</tr>
 					</tr>
@@ -113,11 +95,13 @@
 						<td colspan="4"><hr></td>
 					</tr>
 					<tr class="t2">
-						<td colspan="4">返回购物车修改</td>
+						<td colspan="4"><a href="cart.html">返回购物车修改</a></td>
 					</tr>
 				</table>
 			</div>
 		</div>
 		<iframe src="foot.html" frameborder="0" height="300px"  width="100%" scrolling="no" ></iframe>
+		<script type="text/javascript" src="js/order.js"></script>
+	</script>
 	</body>
 </html>

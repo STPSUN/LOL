@@ -76,6 +76,31 @@ public class UserServiceImpl implements UserService
 		return uList;
 	}
 
-	
-	
+	public void modifyUser(User user)
+	{
+		UserDao userDao = new UserDaoImpl();
+		userDao.update(user);
+	}
+
+	public User findUserById(String id)
+	{
+		User user = null;
+		UserDao userDao = new UserDaoImpl();
+		user = userDao.findUserById(id);
+		
+		return user;
+	}
+
+	public void addUser(User user)
+	{
+		UserDao userDao = new UserDaoImpl();
+		userDao.add(user);
+	}
+
+	public void deleteUser(String id)
+	{
+		UserDao userDao = new UserDaoImpl();
+		userDao.delete(id);
+	}
+
 }

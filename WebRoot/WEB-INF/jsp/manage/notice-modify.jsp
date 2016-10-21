@@ -29,7 +29,7 @@
 			value="${notice.content }"></textarea>
 		<br>
 		<div class="three">
-			<input type="submit" name="submit" value="确认修改" />
+			<input type="image" src="images/querenxiugai.png" />
 		</div>
 	</form>
 </body>

@@ -99,6 +99,47 @@ public class NoticeDaoImpl implements NoticeDao
 		}
 		return notice;
 	}
+
+	public void add(Notice notice)
+	{
+		Connection connection = JdbcUtil.getConnection();
+		PreparedStatement ps = null;
+		String sql = "insert into notice values(seq_notice.nextval,?,?,?)";
+		try
+		{
+			ps = connection.prepareStatement(sql);
+			
+			ps.setString(1, notice.getTitle());
+			ps.setString(2, notice.getState());
+			ps.setString(3, notice.getContent());
+			
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void delete(String id)
+	{
+		PreparedStatement ps = null;
+		Connection connection = JdbcUtil.getConnection();
+		String sql = "delete from notice where id=?";
+		try
+		{
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
 	
 }
 

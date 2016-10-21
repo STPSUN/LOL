@@ -30,7 +30,8 @@
 					<td></td>
 					<td></td>
 					<td>发货</td>
-					<td class="w1 c">修改 删除</td>
+					<td class="w1 c"><a href="tianjiadingdang.html">添加</a> <a
+						href="xiugaidingdang.html">修改</a> 删除</td>
 				</tr>
 
 
@@ -39,7 +40,8 @@
 					<td></td>
 					<td></td>
 					<td>审核通过</td>
-					<td class="w1 c">修改 删除</td>
+					<td class="w1 c"><a href="tianjiadingdang.html">添加</a> <a
+						href="xiugaidingdang.html">修改</a> 删除</td>
 				</tr>
 
 			</table>

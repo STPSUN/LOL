@@ -1,5 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	pageContext.setAttribute("contextPath", path);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +16,7 @@
 <body>
 	<h1>后台管理</h1>
 	<h2>
-		<a href="manageindex.html">主页</a>&gt用户管理
+		<a href="${contextPath }/manageHome">主页</a>&gt用户管理
 	</h2>
 	<form action="#" method="post">
 		<div class="manage">
@@ -43,7 +50,9 @@
 							<td>${user.postcode }</td>
 							<td>${user.grade }</td>
 							<td>${user.address }</td>
-							<td class="w1 c">修改 删除</td>
+							<td class="w1 c"><a
+								href="${contextPath }/user?action=toModify&id=${user.id};">修改</a>
+							</td>
 						</tr>
 					</c:forEach>
 				</c:if>
@@ -52,7 +61,7 @@
 						<td colspan="10" align="center">暂无数据</td>
 					</tr>
 				</c:if>
-				
+
 			</table>
 		</div>
 	</form>

@@ -23,4 +23,16 @@ public interface NoticeDao
 	 * 通过id查找公告
 	 */
 	Notice findById(String id);
+	
+	/**
+	 * 添加公告
+	 * @param notice
+	 */
+	void add(Notice notice);
+	
+	/**
+	 * 删除公告
+	 * @param id
+	 */
+	void delete(String id);
 }

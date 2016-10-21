@@ -19,8 +19,8 @@
 				</tr>
 				<tr>
 					<th>工号ID</th>
-					<th>密码</th>
 					<th>账户名</th>
+					<th>密码</th>
 					<th>等级</th>
 					<th>操作</th>
 				</tr>
@@ -29,15 +29,18 @@
 					<td></td>
 					<td></td>
 					<td>S</td>
-					<td class="w1 c">修改 删除</td>
+					<td class="w1 c"><a href="tianjiaguanliyuan.html">添加</a> <a
+						href="xiugaiguanliyuan.html">修改</a> 删除</td>
 				</tr>
+
 
 				<tr>
 					<td>2</td>
 					<td></td>
 					<td></td>
 					<td>A</td>
-					<td class="w1 c">修改 删除</td>
+					<td class="w1 c"><a href="tianjiaguanliyuan.html">添加</a> <a
+						href="xiugaiguanliyuan.html">修改</a> 删除</td>
 				</tr>
 
 			</table>

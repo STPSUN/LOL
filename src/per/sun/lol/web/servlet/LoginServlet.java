@@ -82,8 +82,65 @@ public class LoginServlet extends HttpServlet
 		}else if("doLogin".equals(action))
 		{
 			doLogin(request, response);
+		}else if("toRegister".equals(action))
+		{
+			toRegister(request, response);
+		}else if("doRegister".equals(action))
+		{
+			doRegister(request, response);
 		}
 		
+	}
+
+	private void doRegister(HttpServletRequest request,
+			HttpServletResponse response) throws IOException
+	{
+		String name = request.getParameter("login account");
+		String username = request.getParameter("loginname");
+		//String sexMan = request.getParameter("sex1");
+		//String sexWoman = request.getParameter("sex2");
+		String sex = request.getParameter("sex");
+		String password = request.getParameter("psw1");
+		String rePassword = request.getParameter("psw2");
+		String phone = request.getParameter("phone");
+		String province = request.getParameter("province");
+		String city = request.getParameter("city");
+		String addressDetail = request.getParameter("jutidizhi");
+		
+		User user = new User();
+		user.setName(name);
+		user.setUsername(username);
+
+//		String sex = sexMan;
+//		if(sex == null)
+//			sex = sexWoman;
+		user.setSex(sex);
+
+		user.setPassword(password);
+		user.setPhone(phone);
+
+		String address = province + " " + city + " " + addressDetail;
+		user.setAddress(address);
+		
+		userService.addUser(user);
+		
+		PrintWriter out = response.getWriter();
+		out.println("<script type='text/javascript'>");
+		out.println("	alert('Register a success');");
+		out.println("	location.href='" + request.getContextPath() + "/home';");
+		out.println("</script>");
+		out.flush();
+		out.close();
+		
+		//response.sendRedirect(request.getContextPath() + "/home");
+	}
+
+	private void toRegister(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException
+	{
+		//User user = null;
+		request.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(request, response);
+		//response.sendRedirect("WEB-INF/jsp/register.jsp");
 	}
 
 	private void doLogin(HttpServletRequest request,

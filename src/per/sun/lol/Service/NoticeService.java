@@ -27,4 +27,17 @@ public interface NoticeService
 	 * @return notice
 	 */
 	Notice getNoticeById(String id);
+	
+	/**
+	 * 添加公告
+	 * 
+	 * @param notice
+	 */
+	void addNotice(Notice notice);
+	
+	/**
+	 * 删除公告
+	 * @param notice
+	 */
+	void deleteNotice(String id);
 }

@@ -1,6 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
+<head><!DOCTYPE html>
+<html>
 <head>
 <link href="css/dingdangguanli.css" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="css/a.css">
@@ -28,7 +30,8 @@
 					<td>1</td>
 					<td></td>
 					<td>1</td>
-					<td class="w1 c">修改 删除</td>
+					<td class="w1 c"><a href="tianjiashangping.html">添加</a> <a
+						href="xiugaishangping.html">修改</a> 删除</td>
 				</tr>
 
 
@@ -36,7 +39,8 @@
 					<td>1</td>
 					<td></td>
 					<td>1</td>
-					<td class="w1 c">修改 删除</td>
+					<td class="w1 c"><a href="tianjiashangping.html">添加</a> <a
+						href="xiugaishangping">修改</a> 删除</td>
 				</tr>
 
 			</table>

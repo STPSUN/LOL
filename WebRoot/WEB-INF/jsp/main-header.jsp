@@ -61,7 +61,7 @@
 				</td>
 				</td>
 				<td id="main-bottom-register">
-					<a href="register.jsp" target="_blank"><h2>注册</h2></a>
+					<a href="${contextPath }/login?action=toRegister"><h2>注册</h2></a>
 				</td>
 				</td>
 			</tr>

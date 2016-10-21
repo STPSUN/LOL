@@ -31,16 +31,20 @@ public class CommodityDaoImpl implements CommodityDao
 			rs = statement.executeQuery(sql);
 			while(rs.next())
 			{
-				System.out.print(rs.getInt("id") + " ");
-				System.out.print(rs.getString("name") + " ");
-				System.out.print(rs.getInt("num") + " ");
+				if(commodityList == null)
+					commodityList = new ArrayList<Commodity>();
+				Commodity commodity = new Commodity();
+				commodity.setId(rs.getString("id"));
+				commodity.setName(rs.getString("name"));
+				commodity.setNum(rs.getInt("num"));
+				commodityList.add(commodity);
 			}
 		} catch (SQLException e)
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return commodityList;
 	}
 
 	public boolean addCommodity(Commodity item)
@@ -82,7 +86,7 @@ public class CommodityDaoImpl implements CommodityDao
 			while(rs.next())
 			{
 				Commodity commodity = new Commodity();
-				commodity.setId(rs.getInt("id"));
+				commodity.setId(rs.getString("id"));
 				commodity.setName(rs.getString("name"));
 				commodity.setNum(rs.getInt("num"));
 				commodityList.add(commodity);
@@ -97,7 +101,7 @@ public class CommodityDaoImpl implements CommodityDao
 		return commodityList;
 	}
 
-	public Commodity findById(Integer id)
+	public Commodity findById(String id)
 	{
 		Connection connection = JdbcUtil.getConnection();
 		PreparedStatement ps = null;
@@ -108,7 +112,7 @@ public class CommodityDaoImpl implements CommodityDao
 		try
 		{
 			ps = connection.prepareStatement(sql);
-			ps.setInt(1, id);
+			ps.setString(1, id);
 			rs = ps.executeQuery();
 			if(rs.next())
 			{
@@ -124,6 +128,66 @@ public class CommodityDaoImpl implements CommodityDao
 		}
 		
 		return commodity;
+	}
+
+	public void update(Commodity commodity)
+	{
+		Connection connection = JdbcUtil.getConnection();
+		PreparedStatement ps = null;	
+		String sql = "update commodity set name=?, num=? where id=?";
+		try
+		{
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, commodity.getName());
+			ps.setInt(2, commodity.getNum());
+			ps.setString(3, commodity.getId());
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void add(Commodity commodity)
+	{
+		Connection connection = JdbcUtil.getConnection();
+		PreparedStatement ps = null;
+		String sql = "insert into commodity values(seq_commodity.nextval,?,?)";
+		try
+		{
+			ps = connection.prepareStatement(sql);
+			
+			ps.setString(1, commodity.getName());
+			ps.setInt(2, commodity.getNum());
+			
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	public void delete(String id)
+	{
+		PreparedStatement ps = null;
+		Connection connection = JdbcUtil.getConnection();
+		String sql = "delete from commodity where id=?";
+		try
+		{
+			ps = connection.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

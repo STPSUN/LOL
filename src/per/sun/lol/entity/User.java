@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class User
 {
-	private Integer id;
+	private String id;
 	private String name;
 	private String username;
 	private String password;
@@ -23,7 +23,7 @@ public class User
 		// TODO Auto-generated constructor stub
 	}
 	
-	public User(Integer id, String name, String username, String password,
+	public User(String id, String name, String username, String password,
 			String sex, String phone, String postcode, String address, Integer status, String grade)
 	{
 		super();
@@ -39,11 +39,11 @@ public class User
 		this.grade = grade;
 	}
 
-	public Integer getId()
+	public String getId()
 	{
 		return id;
 	}
-	public void setId(Integer id)
+	public void setId(String id)
 	{
 		this.id = id;
 	}

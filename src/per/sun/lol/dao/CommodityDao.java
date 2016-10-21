@@ -12,6 +12,9 @@ public interface CommodityDao
 	
 	boolean addCommodity(Commodity item);
 	
-	Commodity findById(Integer id);
+	Commodity findById(String id);
+	void update(Commodity commodity);
+	void add(Commodity commodity);
+	void delete(String id);
 
 }

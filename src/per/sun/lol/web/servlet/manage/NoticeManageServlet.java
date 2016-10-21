@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.registry.DeleteException;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
@@ -37,13 +38,17 @@ public class NoticeManageServlet extends HttpServlet
 
 	/**
 	 * The doGet method of the servlet. <br>
-	 *
+	 * 
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
@@ -53,61 +58,110 @@ public class NoticeManageServlet extends HttpServlet
 
 	/**
 	 * The doPost method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to post.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * This method is called when a form has its tag value method equals to
+	 * post.
+	 * 
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
 	{
 		String action = "noticeList";
 		String ac = request.getParameter("action");
-		if(ac != null)
+		if (ac != null)
 			action = ac;
-		if("noticeList".equals(action))
+		if ("noticeList".equals(action))
 		{
 			noticeList(request, response);
-		}else if("toModify".equals(action))
+		} else if ("toModify".equals(action))
 		{
 			toModify(request, response);
-		}else if("doModify".equals(action))
+		} else if ("doModify".equals(action))
 		{
 			doModify(request, response);
+		} else if ("toAdd".equals(action))
+		{
+			toAdd(request, response);
+		} else if ("doAdd".equals(action))
+		{
+			doAdd(request, response);
+		}else if("delete".equals(action))
+		{
+			delete(request, response);
 		}
+	}
+
+	private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException
+	{
+		String id = request.getParameter("id");
+		noticeService.deleteNotice(id);
+		response.sendRedirect(request.getContextPath() + "/notice?action=noticeList");
+		
+	}
+
+	private void doAdd(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException
+	{
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+
+		Notice notice = new Notice();
+		notice.setTitle(title);
+		notice.setContent(content);
+
+		noticeService.addNotice(notice);
+		
+		PrintWriter out = response.getWriter();
+		out.println("<script type='text/javascript'>");
+		out.println("	alert('Add a success');");
+		out.println("	location.href='" + request.getContextPath() + "/notice?action=noticeList';");
+		out.println("</script>");
+		out.flush();
+		out.close();
+	}
+
+	private void toAdd(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException
+	{
+		request.getRequestDispatcher("WEB-INF/jsp/manage/addNotice.jsp")
+				.forward(request, response);
 	}
 
 	private void doModify(HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException
 	{
-		//收集用户输入的数据
+		// 收集用户输入的数据
 		String id = request.getParameter("id");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		
-		//更新之前，先从数据库加载数据
+
+		// 更新之前，先从数据库加载数据
 		Notice notice = noticeService.getNoticeById(id);
-		
-		//用获取道德用户输入更新实体属性
+
+		// 用获取道德用户输入更新实体属性
 		notice.setTitle(title);
 		notice.setContent(content);
-		
-		//将实体持久化
+
+		// 将实体持久化
 		noticeService.modifyNotice(notice);
-		//request.getRequestDispatcher("WEB-INF/jap/manage/notice.jsp").forward(request, response);
-		noticeList(request, response);
-		
-		//提示并重定向
-		//PrintWriter out = response.getWriter();
-		//out.println("<script type='text/javascript'>");
-		//out.println("   alert('修改成功！);");
-//		out.println("   location.href='" + request.getContextPath() + "/notice?action=noticeList';");
-//		out.println("</script>");
-//		out.flush();
-//		out.close();
+		//noticeList(request, response);
+
+		// 提示并重定向
+		PrintWriter out = response.getWriter();
+		out.println("<script type='text/javascript'>");
+		out.println("	alert('Modify a success');");
+		out.println("	location.href='" + request.getContextPath() + "/notice?action=noticeList';");
+		out.println("</script>");
+		out.flush();
+		out.close();
 	}
 
 	private void toModify(HttpServletRequest request,
@@ -116,20 +170,23 @@ public class NoticeManageServlet extends HttpServlet
 		String noticeId = request.getParameter("id");
 		Notice notice = noticeService.getNoticeById(noticeId);
 		request.setAttribute("notice", notice);
-		request.getRequestDispatcher("/WEB-INF/jsp/manage/notice-modify.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/manage/notice-modify.jsp")
+				.forward(request, response);
 	}
 
 	private void noticeList(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException
 	{
 		request.setAttribute("noticeList", noticeService.getNotices());
-		request.getRequestDispatcher("WEB-INF/jsp/manage/notice.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/manage/notice.jsp").forward(
+				request, response);
 	}
 
 	/**
 	 * Initialization of the servlet. <br>
-	 *
-	 * @throws ServletException if an error occurs
+	 * 
+	 * @throws ServletException
+	 *             if an error occurs
 	 */
 	public void init() throws ServletException
 	{

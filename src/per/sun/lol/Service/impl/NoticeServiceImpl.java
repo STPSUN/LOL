@@ -36,4 +36,16 @@ public class NoticeServiceImpl implements NoticeService
 		return notice;
 	}
 
+	public void addNotice(Notice notice)
+	{
+		NoticeDao noticeDao = new NoticeDaoImpl();
+		noticeDao.add(notice);
+	}
+
+	public void deleteNotice(String id)
+	{
+		NoticeDao noticeDao = new NoticeDaoImpl();
+		noticeDao.delete(id);
+		
+	}
 }

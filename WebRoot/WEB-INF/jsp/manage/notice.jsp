@@ -7,6 +7,16 @@
 			+ path + "/";
 	pageContext.setAttribute("contextPath", path);
 %>
+<<script type="text/javascript">
+	function deleteNotice(id)
+	{
+		if(confirm("确定要删除吗？"))
+			{
+				location.href = "${contextPath}/notice?action=delete&id="
+						+ id;
+			}
+	}
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,15 +26,14 @@
 <body>
 	<h1>后台管理</h1>
 	<h2>
-		<a href="manageindex.html">主页</a>&gt公告管理
+		<a href="${contextPath }/manageHome">主页</a>&gt公告管理
 	</h2>
 	<form action="#" method="post">
 		<div class="manage">
 			<table class="usermanage">
 				<tr>
 					<td colspan="10" align="center";>公告ID:<input type="text"
-						value="" name="quesion" />
-					</td>
+						value="" name="quesion" /></td>
 				</tr>
 				<tr>
 					<th>公告ID</th>
@@ -38,8 +47,11 @@
 							<td>${notice.id }</td>
 							<td>${notice.title }</td>
 							<td>${notice.state }</td>
-							<td class="w1 c"><a href="${contextPath }/notice?action=toModify&id=${notice.id}">修改</a> <a
-								href="tianjiagonggao.html">添加</a> 删除</td>
+							<td class="w1 c"><a
+								href="${contextPath }/notice?action=toModify&id=${notice.id}">修改</a>
+								<a href="${contextPath }/notice?action=toAdd">添加</a>
+								<a href="javascript:deleteNotice(${notice.id});">删除</a>
+							 </td>
 						</tr>
 					</c:forEach>
 				</c:if>
