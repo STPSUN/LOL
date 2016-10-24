@@ -18,7 +18,6 @@
 	<div id="main">
 		<form method="post" action="${contextPath}/login"
 			onsubmit="return checkForm(this)">
-			<%log("进入login.jsp"); %>
 			<input type="hidden" name="action" value="doLogin" />
 			<input type="hidden" name="ourl" value="${param['ourl'] }" />
 			<table width="600px" align="center">

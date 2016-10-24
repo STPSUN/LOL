@@ -20,14 +20,14 @@
 				<hr>
 		<a id="xianjie" href="http://lol.uuu9.com/lolhd/content03.shtml?ald" target="_blank"><img src="images/index/bg01.png" id="score"></a>
 			</div>
-			<div id="top-right">
+			<div id="top-right" >
 				<h2>公告</h2>
 				<hr>
-				<h2><a href="http://lol.qq.com/webplat/info/news_version3/152/22006/m14290/201610/513169.shtml" target="_blank">10月13号凌晨6点30分版本更新公告</a></h2>
-				<h3><a href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/513191.shtml" target="_blank">10月14号转换模式：这货不是统治战场</a></h3>
-				<h3><a href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/513176.shtml" target="_blank">10月14号免费英雄更换公告</a></h3>
-				<h3><a href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/513174.shtml" target="_blank">网通大区网络波动</a></h3>
-				<h3><a href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/512995.shtml" target="_blank">9月12号排位赛关闭补偿公告</a></h3>
+				<h2 ><a style="color:black" href="http://lol.qq.com/webplat/info/news_version3/152/22006/m14290/201610/513169.shtml" target="_blank">10月13号凌晨6点30分版本更新公告</a></h2>
+				<h3><a style="color:black" href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/513191.shtml" target="_blank">10月14号转换模式：这货不是统治战场</a></h3>
+				<h3><a style="color:black" href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/513176.shtml" target="_blank">10月14号免费英雄更换公告</a></h3>
+				<h3><a style="color:black" href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/513174.shtml" target="_blank">网通大区网络波动</a></h3>
+				<h3><a style="color:black" href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/512995.shtml" target="_blank">9月12号排位赛关闭补偿公告</a></h3>
 				
 			</div>
 		</div>
@@ -132,10 +132,10 @@
 			<div id="middle-right">
 				<h2>常见问题列表</h2>
 				<hr>
-				<h3><a href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/512995.shtml" target="_blank">封号查询</a></h3>
-				<h3><a href="http://helper.qq.com/v2/pages/tools/buy-exception.shtml?gid=lol&cid=258" target="_blank">符文购买异常恢复</a></h3>
-				<h3><a href="http://lol.qq.com/act/a20110613icon/" target="_blank">图标点亮/熄灭</a></h3>
-				<h3><a href="http://helper.qq.com/v2/pages/search/bill-query-nobig.shtml?gid=lol&cid=121" target="_blank">商城消费流水</a></h3>
+				<h3><a style="color:black" href="http://lol.qq.com/webplat/info/news_version3/152/4579/4581/m3106/201610/512995.shtml" target="_blank">封号查询</a></h3>
+				<h3><a style="color:black" href="http://helper.qq.com/v2/pages/tools/buy-exception.shtml?gid=lol&cid=258" target="_blank">符文购买异常恢复</a></h3>
+				<h3><a style="color:black" href="http://lol.qq.com/act/a20110613icon/" target="_blank">图标点亮/熄灭</a></h3>
+				<h3><a style="color:black" href="http://helper.qq.com/v2/pages/search/bill-query-nobig.shtml?gid=lol&cid=121" target="_blank">商城消费流水</a></h3>
 			
 			</div>
 		</div>
@@ -146,7 +146,7 @@
 				<div class="bottom-left-one">
 					<dl>
 						<dt >
-							<a href="hero01.html">
+							<a href="${contextPath }/hero?action=hero01">
 							<img src="images/hero/mini02.png">
 							</a>
 							<dd></dd>
@@ -155,7 +155,7 @@
 
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero02.html">
+						<a href="${contextPath }/hero?action=hero02">
 							<img src="images/hero/mini01.png">
 						</a>
 							<dd></dd>
@@ -164,7 +164,7 @@
 					
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero03.html">
+						<a href="${contextPath }/hero?action=hero03">
 							<img src="images/hero/mini03.png">
 						</a>
 							<dd></dd>
@@ -173,7 +173,7 @@
 					
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero04.html">
+						<a href="${contextPath }/hero?action=hero04">
 							<img src="images/hero/mini04.png">
 						</a>
 							<dd></dd>
@@ -182,7 +182,7 @@
 
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero05.html">
+						<a href="${contextPath }/hero?action=hero05">
 							<img src="images/hero/mini05.png">
 							</a>
 							<dd></dd>
@@ -192,35 +192,35 @@
 				<div class="bottom-left-one">
 					<dl>
 						<dt>
-						<a href="hero06.html">
+						<a href="${contextPath }/hero?action=hero06">
 							<img src="images/hero/mini06.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero07.html">
+						<a href="${contextPath }/hero?action=hero07">
 							<img src="images/hero/mini07.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero08.html">
+						<a href="${contextPath }/hero?action=hero08">
 							<img src="images/hero/mini08.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero09.html">
+						<a href="${contextPath }/hero?action=hero09">
 							<img src="images/hero/mini09.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="hero10.html">
+						<a href="${contextPath }/hero?action=hero10">
 							<img src="images/hero/mini10.png">
 							</a>
 						</dt>
@@ -238,12 +238,12 @@
 					</dl>
 					<dl>
 						<dt class="bottom-right-dt">
-							<a href="login.html"><img class="bottom-right-img" src="images/index/denglu.png"></a>
+							<a href="${contextPath}/login?action=toLogin"><img class="bottom-right-img" src="images/index/denglu.png"></a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-right-dt">
-							<a href="register.html"><img class="bottom-right-img" src="images/index/zhece.png"></a>
+							<a href="${contextPath }/login?action=toRegister"><img class="bottom-right-img" src="images/index/zhece.png"></a>
 						</dt>
 					</dl>
 				</div>

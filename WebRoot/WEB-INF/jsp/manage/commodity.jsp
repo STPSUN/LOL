@@ -1,7 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	pageContext.setAttribute("contextPath", path);
+%>
 <!DOCTYPE html>
-<html>
-<head><!DOCTYPE html>
 <html>
 <head>
 <link href="css/dingdangguanli.css" type="text/css" rel="stylesheet" />
@@ -10,7 +16,7 @@
 <body>
 	<h1>后台管理</h1>
 	<h2>
-		<a href="manageindex.html">主页</a>&gt商品管理
+		<a href="${contextPath }/manageHome">主页</a>&gt商品管理
 	</h2>
 	<form action="#" method="post">
 		<div class="manage">
@@ -23,11 +29,13 @@
 				<tr>
 					<th>商品ID</th>
 					<th>商品名称</th>
+					<th>商品价格</th>
 					<th>库存</th>
 					<th>操作</th>
 				</tr>
 				<tr>
 					<td>1</td>
+					<td></td>
 					<td></td>
 					<td>1</td>
 					<td class="w1 c"><a href="tianjiashangping.html">添加</a> <a
@@ -37,6 +45,7 @@
 
 				<tr>
 					<td>1</td>
+					<td></td>
 					<td></td>
 					<td>1</td>
 					<td class="w1 c"><a href="tianjiashangping.html">添加</a> <a

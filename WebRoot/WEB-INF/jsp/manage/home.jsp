@@ -14,7 +14,7 @@
 </head>
 <body>
 	<h1>
-		后台管理<span id="qiantai"><a href="../index.html" target="_blank">返回前台</a>
+		后台管理<span id="qiantai"><a href="${contextPath }/home">返回前台</a>
 		</span>
 	</h1>
 	<div id="manage">

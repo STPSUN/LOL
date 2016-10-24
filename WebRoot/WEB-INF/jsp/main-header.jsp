@@ -24,13 +24,13 @@
 					<img src="images/index/logn.png">
 				</td>
 				<td id="main-header-index">
-					<a href="index.html" target="_blank"><h2>官网首页</h2></a>
+					<a href="${contextPath }/home"><h2>官网首页</h2></a>
 				</td>
 				<td id="main-header-video" >
-					<a href="video.html" target="_blank"><h2>视频中心</h2></a>
+					<a href="${contextPath }/hero?action=toVideo"><h2>视频中心</h2></a>
 				</td>
 				<td id="main-header-mall">
-					<a href="shop.html" target="_blank"><h2>周边商城</h2></a>
+					<a href="${contextPath }/shop?action=toShop"><h2>周边商城</h2></a>
 				</td>
 			</tr>
 		</table>
@@ -46,14 +46,15 @@
 					<img src="images/index/downloadlog.png"></a>
 				</td>
 				<td id="main-bottom-active">
-					<h2>活动资讯</h2>
+					<h2></h2>
 				</td>
 				<td id="main-bottom-video">
-					<h2>最新视频</h2>
+					<h2></h2>
 				</td>
 				<td id="main-bottom-hero">
-				<h2>周免英雄</h2>
+				<h2>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</h2>
 				</td>
+				
 				<td id="main-bottom-login">
 				<%log("登陆"); %>
 					<a href="${contextPath}/login?action=toLogin">

@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.registry.DeleteException;
 
 import per.sun.lol.Service.UserService;
 import per.sun.lol.Service.impl.UserServiceImpl;
@@ -87,7 +88,17 @@ public class UserManageServlet extends HttpServlet
 		}else if("doModify".equals(action))
 		{
 			
+		}else if("delete".equals(action))
+		{
+			delete(request, response);
 		}
+	}
+
+	private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException
+	{
+		String id = request.getParameter("id");
+		userService.deleteUser(id);
+		response.sendRedirect(request.getContextPath() + "/user?action=userList");
 	}
 
 	private void toModify(HttpServletRequest request,

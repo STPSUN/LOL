@@ -9,20 +9,25 @@ import javax.sql.DataSource;
 
 import com.sun.xml.internal.bind.CycleRecoverable.Context;
 
+import per.sun.lol.Service.CartService;
 import per.sun.lol.Service.CommodityService;
 import per.sun.lol.Service.NoticeService;
 import per.sun.lol.Service.OrderServlet;
 import per.sun.lol.Service.UserService;
+import per.sun.lol.Service.impl.CartServiceImpl;
 import per.sun.lol.Service.impl.CommodityServiceImpl;
 import per.sun.lol.Service.impl.NoticeServiceImpl;
 import per.sun.lol.Service.impl.OrderServletImpl;
 import per.sun.lol.Service.impl.UserServiceImpl;
+import per.sun.lol.dao.CartDao;
 import per.sun.lol.dao.CommodityDao;
 import per.sun.lol.dao.NoticeDao;
 import per.sun.lol.dao.UserDao;
+import per.sun.lol.dao.impl.CartDaoImpl;
 import per.sun.lol.dao.impl.CommodityDaoImpl;
 import per.sun.lol.dao.impl.NoticeDaoImpl;
 import per.sun.lol.dao.impl.UserDaoImpl;
+import per.sun.lol.entity.Cart;
 import per.sun.lol.entity.Commodity;
 import per.sun.lol.entity.Notice;
 import per.sun.lol.entity.Order;
@@ -59,8 +64,66 @@ public class Test
 		//test.userFindByName();
 		//test.authentate();
 		//test.addCommodity();
-		test.deleteCom();
+		//test.deleteCom();
+		//test.findCom();
+//		test.addCart();
+//		test.getAllCart();
+		//test.modifyCart();
 		
+	}
+	
+	public void modifyCart()
+	{
+		Cart cart = new Cart();
+		CartService  cartService = new CartServiceImpl();
+		cart = cartService.findCartById("9");
+		System.out.println(cart.getId() + " " + cart.getColor() + " " + cart.getName());
+		cart.setNum(2);
+		
+		cartService.modifyCart(cart);
+	}
+	
+	public void getAllCart()
+	{
+		List<Cart> cartList = new ArrayList<Cart>();
+		CartService cartService = new CartServiceImpl();
+		cartList = cartService.getAllCart();
+		for(Cart cart : cartList)
+		{
+			System.out.println(cart.getId() + " " + cart.getFileName() + " " + cart.getTotal());
+		}
+	}
+	
+	public void addCart()
+	{
+		Cart cart = new Cart();
+		cart.setFileName("aa");
+		cart.setColor("bb");
+//		cart.setName("cc");
+//		cart.setSizes("dd");
+		cart.setPrice(1);
+		cart.setNum(2);
+		cart.setTotal(12);
+		System.out.println(cart.getFileName() + " " + cart.getColor());
+		
+//		CartDao cartDao = new CartDaoImpl();
+//		cartDao.add(cart);
+		
+		CartService cartService = new CartServiceImpl();
+		cartService.delete("4");
+	}
+	
+	public void findCom()
+	{
+		CommodityService  commodityService = new CommodityServiceImpl();
+		Commodity commodity = new Commodity();
+		commodity = commodityService.getCommodityById("6");
+		System.out.println(commodity.getId() + " " + commodity.getName() + " " + commodity.getPrice());
+		commodity.setName("aaa");
+		commodity.setNum(10);
+		commodity.setPrice(130.0);
+		commodityService.modifyCommodity(commodity);
+
 	}
 	
 	public void deleteCom()
@@ -70,7 +133,7 @@ public class Test
 		cList = commodityService.getAllCommodity();
 		for(Commodity commodity : cList)
 		{
-			System.out.println(commodity.getId() + " " + commodity.getName());
+			System.out.println(commodity.getId() + " " + commodity.getName() + " " + commodity.getPrice());
 		}
 		
 	}
@@ -80,6 +143,7 @@ public class Test
 		Commodity commodity = new Commodity();
 		commodity.setName("ssss");
 		commodity.setNum(11);
+		commodity.setPrice(120.0);
 		
 		CommodityService  commodityService = new CommodityServiceImpl();
 		commodityService.addCommodity(commodity);
@@ -205,19 +269,6 @@ public class Test
 		//noticeService.modifyNotice(notice);
 	}
 	
-	
-	public void testAdd()
-	{
-		Commodity commodity = new Commodity("sun",12);
-		CommodityDao commodityDao = new CommodityDaoImpl();
-		if(commodityDao.addCommodity(commodity))
-		{
-			System.out.println("持久化成功");
-		}else
-		{
-			System.out.println("持久化失败");
-		}
-	}
 	
 	public void testFindByName()
 	{

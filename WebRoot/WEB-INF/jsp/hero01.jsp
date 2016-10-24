@@ -7,11 +7,14 @@
 
 </head>
 <body>
-<iframe src="main-header.html" frameborder="0" height="690px" width="100%" scrolling="no" ></iframe>
+<!-- 
 
+<iframe src="main-header.html" frameborder="0" height="690px" width="100%" scrolling="no" ></iframe>
+ -->
+ <%@ include file="main-header.jsp" %>
 <div id="all">
 <div id="weizhi">
-<a href="index.html">英雄联盟首页</a>&gt
+<a style="color:green" href="${contextPath }/home">英雄联盟首页</a>&gt
 周免英雄&gt
 英雄详情
 </div>
@@ -90,7 +93,10 @@
 </dl>
 </div>
 </div>
+<%@ include file="main-end.jsp" %>
+<!-- 
 <iframe src="main-end.html" frameborder="0" height="100px" width="100%" scrolling="no" ></iframe>
+ -->
 </body>
 <script type="text/javascript" src="js/hero01.js"></script>
 </html>

@@ -1,4 +1,12 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+	pageContext.setAttribute("contextPath", path);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +16,7 @@
 <body>
 	<h1>后台管理</h1>
 	<h2>
-		<a href="manageindex.html">主页</a>&gt问题管理
+		<a href="${contextPath }/manageHome">主页</a>&gt问题管理
 	</h2>
 
 	<form action="#" method="post">

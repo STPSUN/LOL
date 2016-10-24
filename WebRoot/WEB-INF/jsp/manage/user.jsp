@@ -23,8 +23,7 @@
 			<table class="usermanage">
 				<tr>
 					<td colspan="10" align="center";>用户ID:<input type="text"
-						value="" name="userID" />
-					</td>
+						value="" name="userID" /></td>
 				</tr>
 				<tr>
 					<th>用户ID</th>
@@ -51,7 +50,8 @@
 							<td>${user.grade }</td>
 							<td>${user.address }</td>
 							<td class="w1 c"><a
-								href="${contextPath }/user?action=toModify&id=${user.id};">修改</a>
+								href="${contextPath }/user?action=toModify&id=${user.id}">修改</a>
+								<a href="${contextPath }/user?action=delete&id=${user.id}">删除</a>
 							</td>
 						</tr>
 					</c:forEach>

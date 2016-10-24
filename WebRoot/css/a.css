@@ -2,3 +2,23 @@ a:link,a:visited{
  text-decoration:none;  
  color:black;
 }
+
+#logo{
+float:left;
+}
+#car{
+float:right;
+margin-left:30px;
+}
+#xingxi{
+    width: 1324px;
+height:30px;
+background-color:black;
+}
+
+#lp{
+margin-left:25%;
+}
+#dingdang{
+margin-left:42%;
+}

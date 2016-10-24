@@ -252,7 +252,7 @@ public class LoginServlet extends HttpServlet
 		{
 			//没有原始请求地址，用户类型是管理员，跳转到后台首页
 			response.sendRedirect(request.getContextPath() + "/manageHome");
-		}else if(loginUser.getStatus() == 2)
+		}else
 		{
 			//没有原始请求地址，用户类型是普通用户，跳转到前台首页
 			response.sendRedirect(request.getContextPath() + "/home");

@@ -5,6 +5,7 @@ public class Commodity
 	private String id;
 	private String name;
 	private Integer num;
+	private Double price;
 	
 	public Commodity()
 	{
@@ -12,12 +13,26 @@ public class Commodity
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Commodity(String name, Integer num)
+	public Commodity(String id, String name, Integer num, Double price)
 	{
 		super();
+		this.id = id;
 		this.name = name;
 		this.num = num;
+		this.price = price;
 	}
+
+	public Double getPrice()
+	{
+		return price;
+	}
+
+	public void setPrice(Double price)
+	{
+		this.price = price;
+	}
+
+
 
 	public String getId()
 	{

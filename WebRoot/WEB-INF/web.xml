@@ -72,6 +72,16 @@
     <servlet-name>AdminManageServlet</servlet-name>
     <servlet-class>per.sun.lol.web.servlet.manage.AdminManageServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ShopServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.ShopServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>HeroServlet</servlet-name>
+    <servlet-class>per.sun.lol.web.servlet.HeroServlet</servlet-class>
+  </servlet>
+
+
 
   <servlet-mapping>
     <servlet-name>HomeServlet</servlet-name>
@@ -117,6 +127,14 @@
   <servlet-mapping>
     <servlet-name>AdminManageServlet</servlet-name>
     <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShopServlet</servlet-name>
+    <url-pattern>/shop</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HeroServlet</servlet-name>
+    <url-pattern>/hero</url-pattern>
   </servlet-mapping>
 
   <resource-ref>

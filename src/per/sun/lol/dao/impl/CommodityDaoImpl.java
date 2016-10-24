@@ -37,6 +37,7 @@ public class CommodityDaoImpl implements CommodityDao
 				commodity.setId(rs.getString("id"));
 				commodity.setName(rs.getString("name"));
 				commodity.setNum(rs.getInt("num"));
+				commodity.setPrice(rs.getDouble("price"));
 				commodityList.add(commodity);
 			}
 		} catch (SQLException e)
@@ -52,12 +53,13 @@ public class CommodityDaoImpl implements CommodityDao
 		boolean result = false;
 		Connection connection = JdbcUtil.getConnection();
 		PreparedStatement pstmt = null;
-		String sql = "insert into commodity values(seq_commodity.nextval,?,?)";
+		String sql = "insert into commodity values(seq_commodity.nextval,?,?,?)";
 		try
 		{
 			pstmt = connection.prepareStatement(sql);
 			pstmt.setString(1, item.getName());
 			pstmt.setInt(2, item.getNum());
+			pstmt.setDouble(3, item.getPrice());
 			result = pstmt.executeUpdate() == 1 ? true : false;
 		} catch (SQLException e)
 		{
@@ -89,6 +91,7 @@ public class CommodityDaoImpl implements CommodityDao
 				commodity.setId(rs.getString("id"));
 				commodity.setName(rs.getString("name"));
 				commodity.setNum(rs.getInt("num"));
+				commodity.setPrice(rs.getDouble("price"));
 				commodityList.add(commodity);
 			}
 		} catch (SQLException e)
@@ -120,6 +123,7 @@ public class CommodityDaoImpl implements CommodityDao
 				commodity.setId(id);
 				commodity.setName(rs.getString("name"));
 				commodity.setNum(rs.getInt("num"));
+				commodity.setPrice(rs.getDouble("price"));
 			}
 		} catch (SQLException e)
 		{
@@ -134,13 +138,14 @@ public class CommodityDaoImpl implements CommodityDao
 	{
 		Connection connection = JdbcUtil.getConnection();
 		PreparedStatement ps = null;	
-		String sql = "update commodity set name=?, num=? where id=?";
+		String sql = "update commodity set name=?, num=?, price=? where id=?";
 		try
 		{
 			ps = connection.prepareStatement(sql);
 			ps.setString(1, commodity.getName());
 			ps.setInt(2, commodity.getNum());
-			ps.setString(3, commodity.getId());
+			ps.setDouble(3, commodity.getPrice());
+			ps.setString(4, commodity.getId());
 			ps.executeUpdate();
 			ps.close();
 		} catch (SQLException e)
@@ -154,13 +159,14 @@ public class CommodityDaoImpl implements CommodityDao
 	{
 		Connection connection = JdbcUtil.getConnection();
 		PreparedStatement ps = null;
-		String sql = "insert into commodity values(seq_commodity.nextval,?,?)";
+		String sql = "insert into commodity values(seq_commodity.nextval,?,?,?)";
 		try
 		{
 			ps = connection.prepareStatement(sql);
 			
 			ps.setString(1, commodity.getName());
 			ps.setInt(2, commodity.getNum());
+			ps.setDouble(3, commodity.getPrice());
 			
 			ps.executeUpdate();
 			ps.close();
