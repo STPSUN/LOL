@@ -61,12 +61,11 @@
 }
 
 #main-img{
-	width: 50%;
 	float: left;
 }
 
 #main-message{
-	
+	margin-left:80px;
 }
 
 #main-text{

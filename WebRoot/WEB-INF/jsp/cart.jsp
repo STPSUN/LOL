@@ -69,7 +69,9 @@
 							<td id="main-checkbox-middle"><input type="checkbox"
 								name="product" value="1" />
 							</td>
-							<td><img id="main-img" src="images/poster/a1.jpg">
+							<td>
+							<img
+					width="260px" height="164px" src="images/poster/active/bp1.png" />
 							</td>
 							<td>
 								<div id="main-message">

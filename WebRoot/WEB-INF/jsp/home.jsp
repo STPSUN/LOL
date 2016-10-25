@@ -146,8 +146,8 @@
 				<div class="bottom-left-one">
 					<dl>
 						<dt >
-							<a href="${contextPath }/hero?action=hero01">
-							<img src="images/hero/mini02.png">
+							<a href="${contextPath }/hero?action=hero01" class="b">
+							<img src="images/hero/mini02.png" >
 							</a>
 							<dd></dd>
 						</dt>
@@ -155,7 +155,7 @@
 
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero02">
+						<a href="${contextPath }/hero?action=hero02" class="b">
 							<img src="images/hero/mini01.png">
 						</a>
 							<dd></dd>
@@ -164,7 +164,7 @@
 					
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero03">
+						<a href="${contextPath }/hero?action=hero03" class="b">
 							<img src="images/hero/mini03.png">
 						</a>
 							<dd></dd>
@@ -173,7 +173,7 @@
 					
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero04">
+						<a href="${contextPath }/hero?action=hero04" class="b">
 							<img src="images/hero/mini04.png">
 						</a>
 							<dd></dd>
@@ -182,7 +182,7 @@
 
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero05">
+						<a href="${contextPath }/hero?action=hero05" class="b">
 							<img src="images/hero/mini05.png">
 							</a>
 							<dd></dd>
@@ -192,35 +192,35 @@
 				<div class="bottom-left-one">
 					<dl>
 						<dt>
-						<a href="${contextPath }/hero?action=hero06">
+						<a href="${contextPath }/hero?action=hero06" class="b"> 
 							<img src="images/hero/mini06.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero07">
+						<a href="${contextPath }/hero?action=hero07" class="b">
 							<img src="images/hero/mini07.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero08">
+						<a href="${contextPath }/hero?action=hero08" class="b">
 							<img src="images/hero/mini08.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero09">
+						<a href="${contextPath }/hero?action=hero09" class="b">
 							<img src="images/hero/mini09.png">
 							</a>
 						</dt>
 					</dl>
 					<dl>
 						<dt class="bottom-left-dt">
-						<a href="${contextPath }/hero?action=hero10">
+						<a href="${contextPath }/hero?action=hero10" class="b">
 							<img src="images/hero/mini10.png">
 							</a>
 						</dt>

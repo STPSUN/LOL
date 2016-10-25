@@ -5,13 +5,14 @@ a:link,a:visited{
 
 #logo{
 float:left;
+    padding-top: 5px;
 }
 #car{
 float:right;
 margin-left:30px;
 }
 #xingxi{
-    width: 1324px;
+    width: 1342px;
 height:30px;
 background-color:black;
 }
@@ -21,4 +22,5 @@ margin-left:25%;
 }
 #dingdang{
 margin-left:42%;
+padding-top: 5px;
 }

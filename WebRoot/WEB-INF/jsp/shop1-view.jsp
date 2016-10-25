@@ -22,7 +22,7 @@
 <body>
 	<%@ include file="head.jsp"%>
 	<div id="left">
-		<img width="" height="" src="images/poster/a1/bp1.png" />
+		<img width="" height="" src="images/poster/active/bp1.png" />
 	</div>
 	<form method="post" action="${contextPath }/shop"
 		onsubmit="return checkForm(this)">
@@ -36,7 +36,7 @@
 			</p>
 			<p style="color: black">颜色:</p>
 			<div class="color">
-				<img src="images/poster/a1/bc1.png"
+				<img src="images/poster/active/bc1.png"
 					style="margin-left: 40px;margin-top: -10px;" />
 				</color>
 				<p style="color: black">尺码:</p>
@@ -60,16 +60,16 @@
 	</form>
 	<div id="shangping">
 		<h2>
-			<font color="white" style="margin-left: 449px;">商&nbsp;&nbsp;品&nbsp;&nbsp;详&nbsp;&nbsp;情</font>
+			<font color="white" style="margin-left: 449px;"><div id="xiangqing">商&nbsp;&nbsp;品&nbsp;&nbsp;详&nbsp;&nbsp;情</div></font>
 		</h2>
 	</div>
 	<div id="photointroduce">
-		<img src="images/poster/a1/bg1-1.jpg"
+		<img src="images/poster/active/bg1-1.jpg"
 			style="margin-left: 188px;margin-top: 43px" /> <img
-			src="images/poster/a1/bg1-2.jpg" style="margin-left: 188px;" /> <img
-			src="images/poster/a1/bg1-3.jpg" style="margin-left: 188px;" /> <img
-			src="images/poster/a1/bg1-4.jpg" style="margin-left: 188px;" /> <img
-			src="images/poster/a1/bg1-5.jpg" style="margin-left: 188px;" />
+			src="images/poster/active/bg1-2.jpg" style="margin-left: 188px;" /> <img
+			src="images/poster/active/bg1-3.jpg" style="margin-left: 188px;" /> <img
+			src="images/poster/bg04.jpg" style="margin-left: 188px;" /> <img
+			src="images/poster/bg05.jpg" style="margin-left: 188px;" />
 	</div>
 	<%@ include file="foot.jsp"%>
 </body>

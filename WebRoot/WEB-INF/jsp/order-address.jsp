@@ -91,7 +91,7 @@
 				<c:if test="${not empty cart }">
 					<c:forEach var="c" items="${cart }">
 						<tr class="tr3">
-							<td><img id="main-img" src="images/poster/a1.jpg">
+							<td><img id="main-img" width="260px" height="164px" src="images/poster/active/bp1.png">
 								<div id="main-message">
 									<span style="color:black">${c.name }<br> </span> <span
 										style="color:black">颜色：${c.color }<br> </span> <span

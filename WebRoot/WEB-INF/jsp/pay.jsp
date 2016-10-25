@@ -38,7 +38,8 @@
 					<hr style=" width:900px;margin-left: -1px;"/>
 					<tr>
 						<td>
-							<img src="images/poster/a1.jpg">
+						<img
+					width="260px" height="164px" src="images/poster/active/bp1.png" />
 							
 						</td>
 						<td>
